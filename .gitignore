@@ -1,0 +1,8 @@
+# Personal files — never publish.
+# context.md holds the learner's profile; progress.md holds their history.
+# The skill creates and maintains both itself (see SKILL.md, "First run").
+**/context.md
+**/progress.md
+
+# macOS
+.DS_Store
