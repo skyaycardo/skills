@@ -1,58 +1,42 @@
 # skills
 
-Personal [ZCode](https://zcode.com) skills. Each directory under this repo is a
-self-contained skill: a `SKILL.md` (the process) plus optional reference files.
+My personal skills. Each folder is one skill: a
+`SKILL.md` with the process and a few support files.
 
-## Skills
+## [tutor/](tutor/) — an active-recall tutor for whatever you're studying
 
-### [`tutor/`](tutor/) — active-recall tutor for whatever you're studying
+Share a transcript or say you finished a lesson, and it gives you an exercise
+set: recall questions, a scenario to predict, a failure to diagnose, hands-on
+practice on your machine, and a one-line tie back to why you're learning this
+at all. Send your answers back and it grades them — misses go into a re-test
+queue so old material comes around again.
 
-Point it at any learning material (video courses, textbooks, lectures). Share a
-transcript or say you finished a lesson, and it responds with an exercise set:
-closed-book **recall**, a **predict** scenario the source didn't cover, a
-**diagnose** scenario ("this broke — most likely causes, most probable first"),
-hands-on **practice** on your machine, and a one-line **connect** that maps the
-concept to your actual goal. Answers come after the divider; send yours back and
-it grades them and queues misses for spaced repetition later.
+Ask it a question mid-course and it answers from your trusted resources first
+(links, books, transcripts you've told it to rely on), with citations. Anything
+it adds from its own knowledge comes after, clearly labeled as such.
 
-When you ask a content question mid-course, it answers from your **trusted
-resources** first — website links, books, transcripts, docs you've told it to
-rely on — with citations, and labels anything it adds beyond them as its own.
-
-#### Install
+### Install
 
 ```sh
 git clone https://github.com/skyaycardo/skills.git
 ln -s "$(pwd)/skills/tutor" ~/.agents/skills/tutor
 ```
 
-(Or clone this repo directly as `~/.agents/skills` if you want it to be your
-live skills directory, like I do.)
+Or clone the repo straight into `~/.agents/skills` so it's your live skills
+directory, like I do.
 
-#### Getting started
+### Getting started
 
-On first use, the skill interviews you — what you're learning, your sources,
-where you're headed, what you can practice on, and which trusted resources
-(links, books, transcripts) answers should be grounded in — and writes
-`context.md` itself. `context.example.md` shows the expected shape with a
-filled-in example.
+On first use it interviews you: what you're learning, your sources, your goal,
+what you can practice on, and any trusted resources you want answers grounded
+in. It writes `context.md` and `trusted-resources.md` itself from your answers.
+The `*.example.md` files show what those look like filled in.
 
-Trusted resources live in `trusted-resources.md` (`trusted-resources.example.md`
-shows the shape), in three sections: **Knowledge** — high-trust sources,
-annotated and pruned ruthlessly; **Wisdom** — communities for judgment calls;
-**Gaps** — topics the destination needs that no resource covers yet. When you
-ask a question, the tutor consults Knowledge first and cites it; anything it
-adds beyond that is clearly labeled and anchored to a canonical source where
-one exists — and it never invents a citation. Full transcripts you hand over
-are stored under `trusted-resources/`.
-
-`context.md`, `progress.md`, `trusted-resources.md`, and `trusted-resources/`
-are gitignored — they're personal, and the skill recreates them if missing.
+`context.md`, `progress.md`, `trusted-resources.md` and the transcripts under
+`trusted-resources/` are all gitignored — they're personal, and the skill
+recreates them if missing.
 
 ## Credits
 
-Parts of the tutor's trusted-resources design — the high-trust curation rules,
-the Knowledge / Wisdom / Gaps split, and length-matched quiz options — were
-inspired by [Matt Pocock's `teach`
-skill](https://github.com/mattpocock/skills/tree/main/skills/productivity/teach)
-in [mattpocock/skills](https://github.com/mattpocock/skills).
+The tutor takes some inspiration from
+[Matt Pocock's skills](https://github.com/mattpocock/skills).
