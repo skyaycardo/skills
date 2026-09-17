@@ -1,8 +1,12 @@
 # Personal files — never publish.
-# context.md holds the learner's profile; progress.md holds their history.
-# The skill creates and maintains both itself (see SKILL.md, "First run").
+# context.md holds the learner's profile; progress.md holds their history;
+# trusted-resources.md holds their trusted reference set (plus any transcripts
+# stored under trusted-resources/).
+# The skill creates and maintains all of these itself (see SKILL.md, "First run").
 **/context.md
 **/progress.md
+**/trusted-resources.md
+**/trusted-resources/
 
 # macOS
 .DS_Store
